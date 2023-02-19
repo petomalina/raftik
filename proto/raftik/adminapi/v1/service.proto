@@ -1,0 +1,16 @@
+syntax = "proto3";
+package raftik.adminapi.v1;
+
+option go_package = "github.com/petomalina/raftik/pkg/adminapi/v1;adminapi";
+
+service AdminAPIService {
+  rpc Status(StatusRequest) returns (StatusResponse) {}
+}
+
+message StatusRequest {
+  string name = 1;
+}
+
+message StatusResponse {
+  string status = 1;
+}
